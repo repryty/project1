@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 3000
 var path = require('path');
 
 var sort = function(input){
@@ -36,7 +35,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/sort', (req, res) => {
-  
+  res.sendFile(__dirname + "/html/sort.html");
 })
 
 app.get('/get', (req, res) => {
@@ -52,6 +51,6 @@ app.get('/result', (req, res) =>{
   res.send(`{"result":"${answer}"}`)
 })
 
-app.listen(port, () =>{
-  console.log("서버 시작")
+app.listen(process.env.PORT || 3000, ()=>{
+  console.log("서버 시작");
 })
