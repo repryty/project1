@@ -28,6 +28,14 @@ var sort = function(input){
   return answer;
 }
 
+var lunch = function(input){
+  //배열로 입력
+  //이진탐색트리가 좋을듯함
+
+  
+
+}
+
 app.use(express.static(path.join(__dirname, 'html')));
 
 app.get('/', (req, res) => {
@@ -41,6 +49,10 @@ app.get('/sort', (req, res) => {
 app.get('/get', (req, res) => {
   var q1 = req.query.q;
   res.send(q1);
+})
+
+app.get('/lunch', (req, res) => {
+  res.sendFile(__dirname+"/html/lunch.html")
 })
 
 app.get('/result', (req, res) =>{
